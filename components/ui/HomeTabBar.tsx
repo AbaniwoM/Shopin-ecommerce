@@ -10,7 +10,7 @@ interface Props {
 const HomeTabBar = ({selectedTab, onTabSelect}:Props) => {
   return (
     <div className="flex items-center justify-between flex-wrap gap-5">
-        <div className="flex items-center gap-3 text-sm font-semibold">
+        <div className="flex flex-wrap items-center gap-3 text-sm font-semibold">
             {productType?.map((item) => (
                 <button onClick={() => onTabSelect(item?.title)} key={item?.title} className={`border border-shop_light_green/20 px-4 py-1.5
                 md:px-6 md:py-2 rounded-full hover:bg-shop_light_green hover:border-shop_light_green hover:text-white hoverEffect
