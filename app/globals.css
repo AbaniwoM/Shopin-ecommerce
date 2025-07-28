@@ -16,6 +16,8 @@
   --color-lightOrange: #fca99b;
   --color-shop_light_green: #3b9c3c;
   --color-deal-bg: #f1f3f8;
+  --color-dark_blue: #6c7fd8;
+  --color-shop_lighter_bg: #f1f3f8;
 }
 
 @theme inline {
@@ -138,4 +140,56 @@
   button {
     @apply hover:cursor-pointer;
   }
+}
+
+/* @media screen and (max-width: 425px) {
+  .product{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0rem;
+  }
+  .text {
+    margin-left: 0rem;
+    width: 24rem;
+    margin-top: 2rem;
+  }
+  .image {
+    width: 24rem;
+  }
+  .smImage {
+    height: 6.2rem;
+  }
+}
+
+@media screen and (min-width: 425px) and (max-width: 768px) {
+  .product{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0rem;
+  }
+  .text {
+    margin-left: 0rem;
+    width: 42rem;
+    margin-top: 2rem;
+  }
+  .image {
+    width: 85rem;
+  }
+  .smImage {
+    height: 6.2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .text {
+    width: 42rem;
+    margin-left: -15.8rem;
+  }
+  .image {
+    width: 85rem;
+  }
+} */
+
+.scrollbar-hide::-webkit-scrollbar{
+  display: none;
 }
