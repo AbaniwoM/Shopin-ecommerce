@@ -1,5 +1,4 @@
 "use client";
-
 import useStore from "@/store";
 import { useSearchParams } from "next/navigation";
 import { Suspense, useEffect } from "react";
