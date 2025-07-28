@@ -14,7 +14,6 @@ import { X } from "lucide-react";
 import { useState } from "react";
 import OrderDetailDialog from "./OrderDetailDialog";
 import toast from "react-hot-toast";
-import { useStore } from "zustand";
 
 const OrdersComponent = ({ orders }: { orders: MY_ORDERS_QUERYResult }) => {
   const [selectedOrder, setSelectedOrder] = useState<

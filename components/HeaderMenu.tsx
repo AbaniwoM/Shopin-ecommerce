@@ -2,7 +2,6 @@
 import { headerData } from '@/constants/data'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import path from 'path'
 import React from 'react'
 
 const HeaderMenu = () => {
