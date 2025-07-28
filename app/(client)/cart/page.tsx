@@ -3,7 +3,7 @@
 import {
   createCheckoutSession,
   Metadata,
-} from "@/actions/createCheckoutSession";
+} from "@/app/actions/createCheckoutSession";
 import Container from "@/components/Container";
 import EmptyCart from "@/components/EmptyCart";
 import NoAccess from "@/components/NoAccess";
