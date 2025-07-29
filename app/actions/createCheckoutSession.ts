@@ -19,6 +19,7 @@ export interface GroupedCartItems {
   quantity: number;
 }
 
+
 export async function createCheckoutSession(
   items: GroupedCartItems[],
   metadata: Metadata
@@ -33,11 +34,11 @@ export async function createCheckoutSession(
 
     const sessionPayload: Stripe.Checkout.SessionCreateParams = {
       metadata: {
-        orderNumber: metadata.orderNumber,
-        customerName: metadata.customerName,
-        customerEmail: metadata.customerEmail,
-        clerkUserId: metadata.clerkUserId!,
-        address: JSON.stringify(metadata.address),
+        orderNumber: metadata.orderNumber || "",
+        customerName: metadata.customerName || "",
+        customerEmail: metadata.customerEmail || "",
+        clerkUserId: metadata.clerkUserId ?? "",
+        address: JSON.stringify(metadata.address ?? {}),
       },
       mode: "payment",
       allow_promotion_codes: true,
@@ -52,7 +53,7 @@ export async function createCheckoutSession(
       line_items: items?.map((item) => ({
         price_data: {
           currency: "USD",
-          unit_amount: Math.round(item?.product?.price! * 100),
+          unit_amount: Math.round((item?.product?.price ?? 0) * 100),
           product_data: {
             name: item?.product?.name || "Unknown Product",
             description: item?.product?.description,
@@ -60,7 +61,7 @@ export async function createCheckoutSession(
             images:
               item?.product?.images && item?.product?.images?.length > 0
                 ? [urlFor(item?.product?.images[0]).url()]
-                : undefined,
+                : [],
           },
         },
         quantity: item?.quantity,
